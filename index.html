@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreeGames - Track Your Games (by doxdk)</title>
+    <title>FreeGames - Track Games Offers (by doxdk)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,57 +13,6 @@
 
     <div class="container">
         <div class="games-grid" id="gamesGrid"></div>
-    </div>
-
-    <button class="add-game" id="addGameBtn">+</button>
-
-    <div class="modal" id="addGameModal">
-        <div class="modal-content">
-            <h2>Add New Game</h2>
-            <form id="addGameForm">
-                <div class="form-group">
-                    <label for="gameName">Game Name</label>
-                    <input type="text" id="gameName" required>
-                </div>
-                <div class="form-group">
-                    <label for="gameImage">Game Image URL (1920x1080)</label>
-                    <input type="url" id="gameImage" required>
-                </div>
-                <div class="form-group">
-                    <label for="gameType">Type</label>
-                    <select id="gameType" required>
-                        <option value="free">Free</option>
-                        <option value="offer">Offer</option>
-                    </select>
-                </div>
-                <div class="form-group" id="priceGroup" style="display: none;">
-                    <label for="gamePrice">Price</label>
-                    <input type="number" id="gamePrice" step="0.01">
-                </div>
-                <div class="form-group" id="endDateGroup" style="display: none;">
-                    <label for="endDate">Offer Ends</label>
-                    <input type="datetime-local" id="endDate">
-                </div>
-                <div class="form-group">
-                    <label for="gamePlatform">Platform</label>
-                    <select id="gamePlatform" required>
-                        <option value="steam">Steam</option>
-                        <option value="epic">Epic Games</option>
-                        <option value="ea">EA</option>
-                        <option value="ubisoft">Ubisoft (Uplay)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="gameKeep">Keeps to Library</label>
-                    <select id="gameKeep" required>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Add Game</button>
-                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
-            </form>
-        </div>
     </div>
 
     <script src="script.js"></script>
