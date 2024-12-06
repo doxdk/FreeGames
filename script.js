@@ -1,8 +1,4 @@
 const themeToggle = document.getElementById('themeToggle');
-const addGameBtn = document.getElementById('addGameBtn');
-const modal = document.getElementById('addGameModal');
-const addGameForm = document.getElementById('addGameForm');
-const cancelBtn = document.getElementById('cancelBtn');
 const gameType = document.getElementById('gameType');
 const priceGroup = document.getElementById('priceGroup');
 const endDateGroup = document.getElementById('endDateGroup');
@@ -24,7 +20,7 @@ let games = [
         type: "offer",
         price: 19.99,
         endDate: "2024-12-31T23:59:59",
-        platform: "epic",
+        platform: "epicgames",
         keepable: true
     },
     {
@@ -42,38 +38,11 @@ themeToggle.addEventListener('click', () => {
     document.documentElement.classList.toggle('dark');
 });
 
-addGameBtn.addEventListener('click', () => {
-    modal.style.display = 'flex';
-});
-
-cancelBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    addGameForm.reset();
-});
 
 gameType.addEventListener('change', () => {
     const isOffer = gameType.value === 'offer';
     priceGroup.style.display = isOffer ? 'block' : 'none';
     endDateGroup.style.display = isOffer ? 'block' : 'none';
-});
-
-addGameForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const newGame = {
-        name: document.getElementById('gameName').value,
-        image: document.getElementById('gameImage').value,
-        type: gameType.value,
-        price: gameType.value === 'offer' ? parseFloat(document.getElementById('gamePrice').value) : 0,
-        endDate: gameType.value === 'offer' ? document.getElementById('endDate').value : null,
-        platform: document.getElementById('gamePlatform').value,
-        keepable: document.getElementById('gameKeep').value === 'true'
-    };
-
-    games.push(newGame);
-    renderGames();
-    modal.style.display = 'none';
-    addGameForm.reset();
 });
 
 function renderGames() {
